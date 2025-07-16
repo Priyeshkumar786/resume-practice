@@ -1,0 +1,282 @@
+/* General Body & Font Styles */
+:root {
+    --primary-color: #3498db; /* A vibrant blue for accents */
+    --secondary-color: #2c3e50; /* Dark blue for main headings */
+    --text-color: #333;
+    --light-gray: #f8f8f8;
+    --border-color: #eee;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.resume-wrapper {
+    width: 900px; /* Max width for content */
+    max-width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Hero Section (Name & Title) */
+.hero {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.2em;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.hero .tagline {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.hero .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 30px; /* Row and column gap */
+    font-size: 0.95em;
+}
+
+.hero .contact-info span {
+    display: flex;
+    align-items: center;
+}
+
+.hero .contact-info a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.hero .contact-info a:hover {
+    color: var(--primary-color);
+}
+
+/* You'll need an icon library like Font Awesome for actual icons.
+   For now, these are placeholders or you can use simple text.
+   Example for Font Awesome:
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   Then use: <i class="fas fa-phone"></i>
+*/
+.icon-phone::before { content: "📞 "; } /* Emoji fallback */
+.icon-envelope::before { content: "📧 "; }
+.icon-map-marker::before { content: "📍 "; }
+.icon-linkedin::before { content: "🌐 "; } /* Or 🔗 */
+.icon-github::before { content: "💻 "; }
+
+/* Main Resume Content */
+.resume-content {
+    padding: 40px;
+}
+
+.section {
+    margin-bottom: 35px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section:last-child {
+    border-bottom: none; /* No border for the last section */
+    margin-bottom: 0;
+}
+
+.section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Underline effect for H2 */
+.section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px; /* Length of the underline */
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* Experience & Education Items */
+.job-item, .education-item, .project-item {
+    margin-bottom: 25px;
+    position: relative; /* For the date positioning */
+}
+
+.job-item:last-child, .education-item:last-child, .project-item:last-child {
+    margin-bottom: 0;
+}
+
+.job-item h3, .education-item h3, .project-item h3 {
+    font-size: 1.25em;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.company, .school {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+    display: inline-block; /* Keep it on the same line as dates when space allows */
+}
+
+.dates {
+    font-size: 0.9em;
+    color: #777;
+    font-style: italic;
+    /* For smaller screens, it will stack naturally */
+}
+
+.job-item .dates, .education-item .dates, .project-item .dates {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.job-item ul, .project-item ul {
+    list-style: disc;
+    padding-left: 25px;
+    margin-top: 10px;
+}
+
+.job-item ul li, .project-item ul li {
+    margin-bottom: 8px;
+}
+
+.education-item .details {
+    font-size: 0.95em;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Skills Section */
+.skills-category {
+    margin-bottom: 15px;
+}
+
+.skills-category h3 {
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.skills-category p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* Projects Section */
+.project-item .description {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.project-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.project-item a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .resume-wrapper {
+        box-shadow: none; /* Less shadow on small screens */
+        border-radius: 0;
+    }
+
+    .hero {
+        padding: 30px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero .tagline {
+        font-size: 1.2em;
+    }
+
+    .hero .contact-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .resume-content {
+        padding: 30px 20px;
+    }
+
+    .section h2 {
+        font-size: 1.6em;
+    }
+
+    /* Adjust dates position for smaller screens */
+    .job-item .dates,
+    .education-item .dates,
+    .project-item .dates {
+        position: static; /* Remove absolute positioning */
+        display: block; /* Make it a block element */
+        margin-top: 5px;
+        margin-bottom: 10px; /* Add some space below */
+    }
+
+    .job-item ul, .project-item ul {
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero .tagline {
+        font-size: 1em;
+    }
+
+    .section h2 {
+        font-size: 1.4em;
+    }
+
+    .job-item h3, .education-item h3, .project-item h3 {
+        font-size: 1.1em;
+    }
+}
